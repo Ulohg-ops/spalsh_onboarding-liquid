@@ -10,5 +10,8 @@
 
 <!--    here need to add some colors that our app will use-->
     <color name="main_color">#F6F4D2</color>
+    <color name="my_yellow">#FFE76E</color>
+    <color name="my_green">#93D9cF</color>
+    <color name="my_red">#FF5F51</color>
 
 </resources>

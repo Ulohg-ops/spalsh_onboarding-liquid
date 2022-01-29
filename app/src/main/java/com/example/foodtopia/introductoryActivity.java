@@ -1,8 +1,10 @@
 package com.example.foodtopia;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
@@ -19,7 +21,6 @@ public class introductoryActivity extends AppCompatActivity {
     //Foodtopia
     TextView text_logo;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,22 @@ public class introductoryActivity extends AppCompatActivity {
         animation = findViewById(R.id.animation);
         text_logo = findViewById(R.id.text_logo);
 
+        // change color of text_logo
+        // 配色可能要改！
+        String text = "Foodtopia";
+        SpannableString spannableString = new SpannableString(text);
+
+        ForegroundColorSpan yellow = new ForegroundColorSpan(getResources().getColor(R.color.my_yellow));
+        ForegroundColorSpan green = new ForegroundColorSpan(getResources().getColor(R.color.my_green));
+        ForegroundColorSpan red = new ForegroundColorSpan(getResources().getColor(R.color.my_red));
+
+        spannableString.setSpan(yellow, 1, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(green, 2, 3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(red, 7, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        text_logo.setText(spannableString);
+
+        // add animation of text_logo
         Animation am = new AlphaAnimation(0.0f, 1.0f);
         am.setDuration(2000);
         am.setRepeatCount(0);
