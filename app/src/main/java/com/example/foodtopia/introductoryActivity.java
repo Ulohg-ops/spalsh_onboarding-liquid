@@ -1,6 +1,12 @@
 package com.example.foodtopia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -21,6 +27,10 @@ public class introductoryActivity extends AppCompatActivity {
     //Foodtopia
     TextView text_logo;
 
+    //onboarding srceen
+    private ViewPager viewPager;
+    private ScreenSlidePagerAdpater pagerAdpater;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +39,10 @@ public class introductoryActivity extends AppCompatActivity {
         background = findViewById(R.id.background);
         animation = findViewById(R.id.animation);
         text_logo = findViewById(R.id.text_logo);
+
+        viewPager=findViewById(R.id.pager);
+        pagerAdpater=new ScreenSlidePagerAdpater(getSupportFragmentManager());
+        viewPager.setAdapter(pagerAdpater);
 
         // change color of text_logo
         // 配色可能要改！
@@ -54,5 +68,37 @@ public class introductoryActivity extends AppCompatActivity {
         background.animate().translationY(-2000).setDuration(1000).setStartDelay(4000);
         animation.animate().translationY(2000).setDuration(1000).setStartDelay(4000);
         text_logo.animate().translationY(1400).setDuration(1000).setStartDelay(4000);
+
+    }
+    private class ScreenSlidePagerAdpater extends FragmentStatePagerAdapter {
+
+
+        public ScreenSlidePagerAdpater(@NonNull FragmentManager fm) {
+            super(fm);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            switch (position){
+                case 0:
+                    OnBoardingFragment1 tab1=new OnBoardingFragment1();
+                    return tab1;
+
+                case 1:
+                    OnBoardingFragment2 tab2=new OnBoardingFragment2();
+                    return tab2;
+
+                case 2:
+                    OnBoardingFragment3 tab3=new OnBoardingFragment3();
+                    return tab3;
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
     }
 }
