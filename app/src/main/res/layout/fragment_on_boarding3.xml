@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/og_bg3">
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/onboarding_img2"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/onboarding_img3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".3"
@@ -24,6 +25,7 @@
         android:text="Food Topia"
         android:textColor="@color/white"
         android:textSize="16dp"
+        android:fontFamily="@font/aldrich"
         android:textStyle="bold"
         app:flow_horizontalBias="0"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
@@ -34,9 +36,11 @@
         app:layout_constraintVertical_bias="0" />
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
+        android:fontFamily="@font/aldrich"
         android:text="Skip"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -50,10 +54,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:text="Personalization"
+        android:text="Platform"
+        android:fontFamily="@font/aldrich"
         android:textSize="30sp"
-        android:textColor="@color/white"
+        android:textColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
@@ -67,7 +71,8 @@
         android:layout_height="wrap_content"
         android:text="Sharing Recipe"
         android:textColor="@color/white"
-        android:textSize="42sp"
+        android:fontFamily="@font/aldrich"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,8 +87,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:text="Share what you eat."
+        android:fontFamily="@font/aldrich"
         android:textSize="16sp"
-        android:textColor="@color/white"
+        android:textColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".1"
@@ -95,14 +101,29 @@
 " />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="50dp"
         android:layout_height="10dp"
+        android:layout_marginLeft="5dp"
         android:src="@drawable/tab3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias=".6"
-        android:layout_marginLeft="5dp"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias=".6" />
+
+    <ImageButton
+        android:id="@+id/btn_ob_start"
+        android:layout_width="82dp"
+        android:layout_height="90dp"
+        android:background="@color/og_bg3"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.708" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
